@@ -925,11 +925,13 @@ body {
   border-radius: 10px;
   background: #f4f6fa;
   padding: 30px 20px 30px 30px;
+  position: relative;
+  z-index: -10;
 }
 .advantages__block .tabs {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 14px;
 }
 .advantages__block .tabs .active {
   cursor: default;
@@ -941,6 +943,7 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  position: relative;
 }
 .advantages__block .tabs .active span {
   font-family: "Raleway", sans-serif;
@@ -952,7 +955,19 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.advantages__block .tabs .active::after {
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  width: 200%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 10px 0 0 10px;
+}
 .advantages__block .tabs li {
+  padding: 10px 0 10px 10px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1369,5 +1384,33 @@ body {
   }
   .advantages .title {
     max-width: 418px;
+  }
+  .advantages__block {
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+  }
+  .advantages__block .tabs {
+    width: 100%;
+  }
+  .advantages__block .tabs .active {
+    margin-bottom: 585px;
+  }
+  .advantages__block .tabs .active::after {
+    width: 100%;
+  }
+  .advantages__block .tabs li {
+    width: 100%;
+  }
+  .advantages__block .contentTabs {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+  }
+  .advantages__block .contentTabs .contentItem {
+    box-sizing: content-box;
+    padding: 30px 50px 40px 20px;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 15px;
   }
 }/*# sourceMappingURL=style.css.map */
